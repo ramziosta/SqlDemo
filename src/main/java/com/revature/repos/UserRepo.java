@@ -141,8 +141,9 @@ public class UserRepo implements CRUDDaoInterface<User> {
             String sql = "DELETE FROM users WHERE id = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setInt(1, user.getId());
-            pstmt.executeUpdate();
-           return true;
+          pstmt.execute();
+          return true;
+            // pstmt.execute() specifically returns false
 
         } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());

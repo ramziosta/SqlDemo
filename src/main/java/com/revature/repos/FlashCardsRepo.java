@@ -116,7 +116,7 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
     }
 
 
-//testd works fine
+// tested works fine
     //THIS ONLY UPDATES THE ANSWER!!!!
     @Override
     public FlashCard update(FlashCard flashCard) {
@@ -148,7 +148,7 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
     }
 
 
-    //returns false??? needs to fix
+    //tested works fine
     @Override
     public boolean delete(FlashCard flashcard) {
         try {
