@@ -4,56 +4,49 @@ import com.revature.models.FlashCard;
 import com.revature.repos.FlashCardsRepo;
 import java.util.List;
 
-
-
 public class FlashCardService {
 
     private final FlashCardsRepo flashCardRepo;
 
-    public FlashCardService(){
+    public FlashCardService() {
         flashCardRepo = new FlashCardsRepo();
     }
 
-    public FlashCardService(FlashCardsRepo flashCardRepo){
+    public FlashCardService(FlashCardsRepo flashCardRepo) {
         this.flashCardRepo = flashCardRepo;
     }
 
+    // create
+    public int createFlashCard(FlashCard flashcard) {
 
-    //create
-    public String create(FlashCard flashcard){
-        if(flashCardRepo.create(flashcard) > 0 ){
-            return " created";
-        }
-        return " not created";
-
-        //return userRepo.create(user)
+        return flashCardRepo.create(flashcard);
 
     }
 
-
     // read all
-    public List<FlashCard> getAllFlashCards(){
+    public List<FlashCard> getAllFlashCards() {
         return flashCardRepo.getAll();
     }
 
+    // read byID
 
-    //read byID
-
-    public FlashCard getById(int id){
+    public FlashCard getFlashCardById(int id) {
         return flashCardRepo.getById(id);
     }
 
-    //update
+    // update
 
-    public FlashCard update(FlashCard flashcard){
+    public FlashCard updateFlashCard(FlashCard flashcard) {
         return flashCardRepo.update(flashcard);
     }
 
-    //delete
-    public boolean deleteFlashCard(FlashCard flashcard){
+    // delete
+    public boolean deleteFlashCard(FlashCard flashcard) {
         return flashCardRepo.delete(flashcard);
     }
 
-
+    public boolean deleteFlashCardById(int id) {
+        return flashCardRepo.deleteById(id);
+    }
 
 }

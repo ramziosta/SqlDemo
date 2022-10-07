@@ -7,7 +7,8 @@ public class User {
     private String email;
     private String password;
 
-    public User(){}
+    public User() {
+    }
 
     // constructor with no id as it's generated from DB
     public User(String firstname, String lastname, String email, String password) {

@@ -8,7 +8,8 @@ public class FlashCard {
 
     public FlashCard() {
     }
-    public FlashCard( String question, String answer, int creator_id) {
+
+    public FlashCard(String question, String answer, int creator_id) {
 
         this.question = question;
         this.answer = answer;
@@ -55,6 +56,7 @@ public class FlashCard {
     }
 
     public String toString() {
-        return "FlashCard{id=" + this.id + ", question='" + this.question + '\'' + ", answer='" + this.answer + '\'' + ", creator_id=" + this.creator_id + '}';
+        return "FlashCard{id=" + this.id + ", question='" + this.question + '\'' + ", answer='" + this.answer + '\''
+                + ", creator_id=" + this.creator_id + '}';
     }
 }

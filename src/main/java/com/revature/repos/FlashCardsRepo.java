@@ -1,14 +1,11 @@
 package com.revature.repos;
 
-
 import com.revature.models.FlashCard;
 import com.revature.utils.CRUDDaoInterface;
-import com.revature.models.User;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
     public Connection connection;
@@ -28,7 +25,6 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
 
     }
 
-
     // tested works fine
     @Override
     public int create(FlashCard flashcard) {
@@ -39,7 +35,6 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
             pstmt.setString(1, flashcard.getQuestion());
             pstmt.setString(2, flashcard.getAnswer());
             pstmt.setInt(3, flashcard.getCreator_id());
-
 
             pstmt.executeUpdate();
 
@@ -65,7 +60,7 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
             PreparedStatement pstmt = connection.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
 
-            while(rs.next()) {
+            while (rs.next()) {
 
                 FlashCard flashcard = new FlashCard();
 
@@ -85,7 +80,7 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
         return null;
     }
 
-  // tested works fine
+    // tested works fine
     @Override
     public FlashCard getById(int id) {
 
@@ -97,10 +92,11 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
 
             ResultSet rs = pstmt.executeQuery();
 
-            // Returns a flashcard therefore a new instance of a flashcard from database has to be created
+            // Returns a flashcard therefore a new instance of a flashcard from database has
+            // to be created
             FlashCard flashcard = new FlashCard();
 
-            while (rs.next()){
+            while (rs.next()) {
                 flashcard.setId(rs.getInt("id"));
                 flashcard.setQuestion(rs.getString("question"));
                 flashcard.setAnswer(rs.getString("answer"));
@@ -115,9 +111,8 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
         return null;
     }
 
-
-// tested works fine
-    //THIS ONLY UPDATES THE ANSWER!!!!
+    // tested works fine
+    // THIS ONLY UPDATES THE ANSWER!!!!
     @Override
     public FlashCard update(FlashCard flashCard) {
 
@@ -142,13 +137,11 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
         } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());
 
-
         }
         return null;
     }
 
-
-    //tested works fine
+    // tested works fine
     @Override
     public boolean delete(FlashCard flashcard) {
         try {
@@ -158,13 +151,16 @@ public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
             ResultSet rs = pstmt.executeQuery();
             return true;
 
-
         } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());
         }
 
         return false;
     }
+
+    // delete by id
+
+    public boolean deleteById(int id) {
+        return delete(getById(id));
+    }
 }
-
-

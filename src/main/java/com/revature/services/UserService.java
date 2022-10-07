@@ -9,41 +9,38 @@ public class UserService {
 
    private final UserRepo userRepo;
 
-   public UserService(){
+   public UserService() {
       userRepo = new UserRepo();
    }
 
-      public UserService(UserRepo userRepo){
+   public UserService(UserRepo userRepo) {
       this.userRepo = userRepo;
-      }
+   }
 
-
-   //create
-   public int create(User user){
-     return userRepo.create(user);
-     }
-
+   // create
+   public int create(User user) {
+      return userRepo.create(user);
+   }
 
    // read all
-      public List<User> getAllUsers(){
+   public List<User> getAllUsers() {
       return userRepo.getAll();
    }
 
+   // read byID
 
-   //read byID
-
-   public User getById(int id){
+   public User getById(int id) {
       return userRepo.getById(id);
    }
 
-   //update
+   // update
 
-   public User updateUser(User user){
+   public User updateUser(User user) {
       return userRepo.update(user);
    }
 
-   //delete
-   public boolean deleteUser(User user){
+   // delete
+   public boolean deleteUser(User user) {
       return userRepo.delete(user);
    }
 

@@ -7,7 +7,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class UserRepo implements CRUDDaoInterface<User> {
     public Connection connection;
 
@@ -51,7 +50,7 @@ public class UserRepo implements CRUDDaoInterface<User> {
         return 0;
     }
 
-    //tested works fine
+    // tested works fine
     @Override
     public List<User> getAll() {
 
@@ -62,7 +61,7 @@ public class UserRepo implements CRUDDaoInterface<User> {
             PreparedStatement pstmt = connection.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
 
-            while(rs.next()) {
+            while (rs.next()) {
                 User user = new User();
                 user.setId(rs.getInt("id"));
                 user.setFirstName(rs.getString("first_name"));
@@ -89,7 +88,7 @@ public class UserRepo implements CRUDDaoInterface<User> {
             ResultSet rs = pstmt.executeQuery();
             User user = new User();
 
-            while(rs.next()) {
+            while (rs.next()) {
                 user.setId(rs.getInt("id"));
                 user.setFirstName(rs.getString("first_name"));
                 user.setLastName(rs.getString("last_name"));
@@ -100,12 +99,11 @@ public class UserRepo implements CRUDDaoInterface<User> {
             return user;
         } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());
-          }
+        }
         return null;
     }
 
-
-    //tested works fine
+    // tested works fine
     @Override
     public User update(User user) {
 
@@ -133,7 +131,6 @@ public class UserRepo implements CRUDDaoInterface<User> {
         return null;
     }
 
-
     // tested works fine
     @Override
     public boolean delete(User user) {
@@ -141,8 +138,8 @@ public class UserRepo implements CRUDDaoInterface<User> {
             String sql = "DELETE FROM users WHERE id = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setInt(1, user.getId());
-          pstmt.execute();
-          return true;
+            pstmt.execute();
+            return true;
             // pstmt.execute() specifically returns false
 
         } catch (SQLException sqlException) {
@@ -152,4 +149,3 @@ public class UserRepo implements CRUDDaoInterface<User> {
         return false;
     }
 }
-
