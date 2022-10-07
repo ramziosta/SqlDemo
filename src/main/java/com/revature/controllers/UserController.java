@@ -35,7 +35,7 @@ public class UserController {
 
     // id
     public Handler getUserById = context -> {
-        String param = context.pathParam("id)");
+        String param = context.pathParam("id");
         try {
             int id = Integer.parseInt(param);
             User user = service.getById(id);
