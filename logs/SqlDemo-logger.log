@@ -1,0 +1,32 @@
+2022-10-07 14:09:38,318 INFO io.javalin.core.util.JavalinLogger [main] 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+2022-10-07 14:09:38,337 INFO org.eclipse.jetty.util.log.Log [main] Logging initialized @872ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-10-07 14:09:38,338 INFO io.javalin.core.util.JavalinLogger [main] Starting Javalin ...
+2022-10-07 14:09:38,370 INFO io.javalin.core.util.JavalinLogger [main] You are running Javalin 4.6.4 (released July 8, 2022. Your Javalin version is 91 days old. Consider checking for a newer version.).
+2022-10-07 14:09:38,706 INFO io.javalin.core.util.JavalinLogger [main] Listening on http://localhost:8081/
+2022-10-07 14:09:38,706 INFO io.javalin.core.util.JavalinLogger [main] Javalin started in 368ms \o/
+2022-10-07 14:09:38,946 ERROR com.revature.repos.UserRepo [main] FATAL: password authentication failed for user "postgrs"
+2022-10-07 14:09:39,029 ERROR com.revature.repos.FlashCardsRepo [main] FATAL: password authentication failed for user "postgrs"
+2022-10-07 14:10:25,539 INFO io.javalin.core.util.JavalinLogger [main] 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+2022-10-07 14:10:25,554 INFO org.eclipse.jetty.util.log.Log [main] Logging initialized @1065ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-10-07 14:10:25,555 INFO io.javalin.core.util.JavalinLogger [main] Starting Javalin ...
+2022-10-07 14:10:25,589 INFO io.javalin.core.util.JavalinLogger [main] You are running Javalin 4.6.4 (released July 8, 2022. Your Javalin version is 91 days old. Consider checking for a newer version.).
+2022-10-07 14:10:25,964 INFO io.javalin.core.util.JavalinLogger [main] Listening on http://localhost:8081/
+2022-10-07 14:10:25,964 INFO io.javalin.core.util.JavalinLogger [main] Javalin started in 409ms \o/
+2022-10-07 14:10:26,217 ERROR com.revature.repos.UserRepo [main] FATAL: password authentication failed for user "postgrs"
+2022-10-07 14:10:26,315 ERROR com.revature.repos.FlashCardsRepo [main] FATAL: password authentication failed for user "postgrs"

@@ -2,6 +2,9 @@ package com.revature.repos;
 
 import com.revature.models.FlashCard;
 import com.revature.utils.CRUDDaoInterface;
+import com.revature.utils.ConnectionManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,18 +12,16 @@ import java.util.List;
 
 public class FlashCardsRepo implements CRUDDaoInterface<FlashCard> {
     public Connection connection;
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserRepo.class);
 
     public FlashCardsRepo() {
-        String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=flashcard";
-        String username = "postgres";
-        String password = "Ac1bd2ce3@212";
 
         try {
-            this.connection = DriverManager.getConnection(url, username, password);
-            System.out.println(connection.getSchema());
+          connection = ConnectionManager.getConnection();
         } catch (SQLException sqlException) {
 
             System.out.println(sqlException.getMessage());
+            LOGGER.error(sqlException.getMessage());
         }
 
     }

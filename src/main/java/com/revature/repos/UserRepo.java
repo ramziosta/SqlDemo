@@ -2,6 +2,9 @@ package com.revature.repos;
 
 import com.revature.utils.CRUDDaoInterface;
 import com.revature.models.User;
+import com.revature.utils.ConnectionManager;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,18 +12,15 @@ import java.util.List;
 
 public class UserRepo implements CRUDDaoInterface<User> {
     public Connection connection;
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserRepo.class);
     public UserRepo() {
-        String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=flashcard";
-        String username = "postgres";
-        String password = "Ac1bd2ce3@212";
 
         try {
-            this.connection = DriverManager.getConnection(url, username, password);
-            System.out.println(connection.getSchema());
+            connection = ConnectionManager.getConnection();
         } catch (SQLException sqlException) {
 
             System.out.println(sqlException.getMessage());
+            LOGGER.error(sqlException.getMessage());
         }
 
     }
@@ -46,6 +46,7 @@ public class UserRepo implements CRUDDaoInterface<User> {
 
         } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());
+            LOGGER.error(sqlException.getMessage());
         }
         return 0;
     }

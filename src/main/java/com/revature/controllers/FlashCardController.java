@@ -15,6 +15,7 @@ public class FlashCardController {
         service = flashCardService;
     }
 
+
     // create
     public Handler createNewFlashCard = context -> {
 
@@ -28,10 +29,16 @@ public class FlashCardController {
             context.result("FlashCard not created").status(400);
         }
     };
+
+
+
     // get all flashCards
     public Handler getAllFlashCards = context -> {
         context.json(service.getAllFlashCards());
+        // add from pic validation
     };
+
+
 
     // id
     public Handler getFlashCardById = context -> {
@@ -50,6 +57,8 @@ public class FlashCardController {
         }
 
     };
+
+
 
     // update
 
